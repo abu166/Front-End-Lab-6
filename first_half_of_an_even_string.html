@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract First Half of Even String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Extract First Half of an Even String</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" required>
+    <br>
+    <button onclick="extractFirstHalf()">Extract First Half</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function extractFirstHalf() {
+            const inputString = document.getElementById('inputString').value;
+            const length = inputString.length;
+
+            if (length % 2 === 0) {
+                const firstHalf = inputString.substring(0, length / 2);
+                document.getElementById('result').innerHTML = `First half of the string: "${firstHalf}"`;
+            } else {
+                document.getElementById('result').innerHTML = `Original string: "${inputString}"`;
+            }
+        }
+    </script> 
+</body>
+</html>
